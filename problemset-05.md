@@ -8,7 +8,7 @@ All coding portions should go in `main.py` as usual.
 
 ## 1. Shortest shortest paths
 
-a) (7 pts) Suppose we are given a a directed, **weighted** graph $G=(V,E)$ with only positive edge weights. For a source vertex $s$, design an algorithm to find the shortest path from $s$ to all other vertices with the fewest number of edges. That is, if there are multiple paths with the same total edge weight, output the one with the fewest number of edges.
+**1a) (7 pts)** Suppose we are given a a directed, **weighted** graph $G=(V,E)$ with only positive edge weights. For a source vertex $s$, design an algorithm to find the shortest path from $s$ to all other vertices with the fewest number of edges. That is, if there are multiple paths with the same total edge weight, output the one with the fewest number of edges.
 
     Complete the function `shortest_shortest_path` and test with the example graph given in `test_shortest_shortest_path`. Note that the `shortest_shortest_path` function returns both the weight and the number of edges of each shortest path.
 
@@ -17,7 +17,7 @@ a) (7 pts) Suppose we are given a a directed, **weighted** graph $G=(V,E)$ with 
     .  
 
 
-b) (4 pts) What is the work and span of your algorithm? 
+**1b) (4 pts)** What is the work and span of your algorithm? 
 
     **put in answers.md**
 
@@ -36,7 +36,7 @@ variable or a constant (e.g., ``((a+b)+c)*(-3)``). Any such expression
 can also be represented as a binary tree in which operators are
 internal nodes and literals are leaves. 
 
-a) (3 pts) Design an algorithm that takes an expression $E$ with $n$ literals
+**2a) (3 pts)** Design an algorithm that takes an expression $E$ with $n$ literals
 and produces a tree $T_E$. Analyze and state the work and span of your algorithm.
 
 
@@ -47,7 +47,7 @@ and produces a tree $T_E$. Analyze and state the work and span of your algorithm
     .  
 
 
-b) (2 pts) Now, suppose we are given a tree $T_E$ and values for each variable
+**2b) (2 pts)** Now, suppose we are given a tree $T_E$ and values for each variable
 as input. What is the work and span to compute the value of the
 corresponding arithmetic expression?
 
@@ -57,7 +57,7 @@ corresponding arithmetic expression?
     .  
     .  
 
-c) (2 pts) Finally, suppose we have evaluated an expression as described above
+**2c) (2 pts)** Finally, suppose we have evaluated an expression as described above
 but now want to change just one variable's value. What is the
 work/span to update a previously computed value, with respect to the
 expression tree?
@@ -75,7 +75,7 @@ In our analysis of the work done by Dijkstra's algorithm, we ended up
 with a bound of $O(|E|\log |E|)$. Let's take a closer look at how
 changing the type of heap used affects this work bound.
 
-a) (2 pts) A $d$-ary heap is a generalization of a binary heap in which we
+**3a) (2 pts)** A $d$-ary heap is a generalization of a binary heap in which we
 have a $d$-ary tree as the data structure. The heap and shape
 properties are still maintained, but each internal node now has $d$
 children (except possibly the rightmost leaf). What is the maximum
@@ -91,7 +91,7 @@ depth of a $d$-ary heap?
 
 
 
-b) (3 pts) In a binary heap the `delete-min` operation removes the root,
+**3b) (3 pts)** In a binary heap the `delete-min` operation removes the root,
 places the rightmost leaf at the root position and restores the heap
 property by swapping downward. Similarly the `insert` operation places
 the new element as the rightmost leaf and swaps upward to restore the
@@ -108,7 +108,7 @@ work differs for each operation.
 
 
 
-c) (3 pts) Now, suppose we use a $d$-ary heap for Dijkstra's algorithm. What is the
+**3c) (3 pts)** Now, suppose we use a $d$-ary heap for Dijkstra's algorithm. What is the
 new bound on the work? Your bound will be a function of
 $|V|$, $|E|$, and $d$ and will account for the `delete-min` and
 `insert` operations separately.
@@ -122,7 +122,7 @@ $|V|$, $|E|$, and $d$ and will account for the `delete-min` and
 
 
 
-d) (3 pts) Now that we have a characterization of how Dijkstra's algorithm
+**3d) (3 pts)** Now that we have a characterization of how Dijkstra's algorithm
 performs with a $d$-ary heap, let's look at how we might be able to
 optimize the choice of $d$ under certain assumptions. Let's suppose
 that we have a moderate number of edges, that is  $|E| = |V|^{1+\epsilon}$ for $0<\epsilon
@@ -150,7 +150,7 @@ such that only vertices $0, 1, \ldots, k$ are allowed to be used. Then
 the cost of the shortest path between vertices $i$ and $j$ is then
 given by $\mathit{APSP}(i, j, n-1).$
 
-a) (2 pts) Consider the following graph with 3 vertices.
+**4a) (2 pts)** Consider the following graph with 3 vertices.
 
     ![apsp_example.jpg](apsp_example.jpg)
 
@@ -165,7 +165,7 @@ a) (2 pts) Consider the following graph with 3 vertices.
 
 
 
-b) (3 pts) Do you see a relationship between $\mathit{APSP}(i, j, 1)$ and
+**4b) (3 pts)** Do you see a relationship between $\mathit{APSP}(i, j, 1)$ and
 $\mathit{APSP}(i, j, 2)$? Can you write $\mathit{APSP}(i, j, 2)$ in
 terms of $\mathit{APSP}(i, j, 0)$ and $\mathit{APSP}(i, j, 1)$ only?
 
@@ -179,7 +179,7 @@ terms of $\mathit{APSP}(i, j, 0)$ and $\mathit{APSP}(i, j, 1)$ only?
 
 
 
-c) (3 pts) Suppose that an oracle (i.e., an all-powerful source of information) makes available to us all possible values
+**4c) (3 pts)** Suppose that an oracle (i.e., an all-powerful source of information) makes available to us all possible values
 for $\mathit{APSP}(i, j, k-1)$ for all $i, j$ and some particular value
 of $k-1<n$. Then what is the shortest path cost $\mathit{APSP}(i,
 j, k)$? Well, it is either $\mathit{APSP}(i,
@@ -196,7 +196,7 @@ $\mathit{APSP}(i, j, k).$
 
 
 
-d) (3 pts) As usual naively implementing this optimal substructure
+**4d) (3 pts)** As usual naively implementing this optimal substructure
 property to compute $\mathit{APSP}(i, j, n-1)$ for all $i, j$ will be
 inefficient. Suppose we perform top-down memoization so that we only
 ever compute each subproblem from scratch once. How many distinct
@@ -212,7 +212,7 @@ work of this dynamic programming algorithm?
 
 
 
-e) (3 pts) Compare the work of this algorithm against that of just running
+**4e) (3 pts)** Compare the work of this algorithm against that of just running
 Dijkstra $n$ times. Is our dynamic programming algorithm
 better than this?
 
@@ -228,7 +228,7 @@ better than this?
 
 ## 5. Spanning trees
 
-a) (3 pts) Consider a variation of the MST problem that instead asks for a tree that minimizes the maximum weight of any edge in the spanning tree. Let's call this the minimum maximum edge tree (MMET). Is a solution to MST guaranteed to be a solution to MMET? Why or why not?
+**5a) (3 pts)** Consider a variation of the MST problem that instead asks for a tree that minimizes the maximum weight of any edge in the spanning tree. Let's call this the minimum maximum edge tree (MMET). Is a solution to MST guaranteed to be a solution to MMET? Why or why not?
 
 
     **put in answers.md**
@@ -238,7 +238,7 @@ a) (3 pts) Consider a variation of the MST problem that instead asks for a tree 
     .  
 
 
-b) (2 pts) Suppose that the optimal solution to MST is impossible to use for some reason. Describe an algorithm to instead find the next best tree (pseudo-code or English is fine). That is, return the tree with the next lowest weight. 
+**5b) (2 pts)** Suppose that the optimal solution to MST is impossible to use for some reason. Describe an algorithm to instead find the next best tree (pseudo-code or English is fine). That is, return the tree with the next lowest weight. 
 
 
     **put in answers.md**
@@ -248,7 +248,7 @@ b) (2 pts) Suppose that the optimal solution to MST is impossible to use for som
     .  
 
 
-c) (2 pts) What is the work of your algorithm?
+**5c) (2 pts)** What is the work of your algorithm?
 
 
     **put in answers.md**
