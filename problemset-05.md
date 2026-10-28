@@ -152,9 +152,10 @@ given by $\mathit{APSP}(i, j, n-1).$
 
 **4a) (2 pts)** Consider the following graph with 3 vertices.
 
-    ![apsp_example.jpg](apsp_example.jpg)
+![A simple, fully-connected, three vertex graph with weights 2, 1, -2 (clockwise)](apsp_example.jpg)
 
-    Compute $\mathit{APSP}(i, j, k)$ for all $i, j, k$.
+
+Compute $\mathit{APSP}(i, j, k)$ for all $i, j, k$.
 
 
     **put in answers.md**
